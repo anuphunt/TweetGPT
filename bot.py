@@ -6,20 +6,15 @@ from jsonReader import read
 
 from gpt3 import generate_reply
 
-creds = read('config.json')
+data = read('config.json')
 
-# auth = tweepy.OAuthHandler(consumer_key="sRDEjgJXnnqQ57EEkA73g2sGX",
-#                            consumer_secret="3WE6Ouj80YwWiJVQK3lrWNUGXIABARNYTYia5kHWwxCTT2MB2R")
-# auth.set_access_token("1613040771980234752-uJSBEhQ3PlRyyKcnPJH0Yfhx9dn5Vf",
-#                       "w0B0FukhXc4Mu0wXjf36BZAavJ7uEpqZtKidjyLngOtde")
-
-auth = tweepy.OAuthHandler(consumer_key=creds['twitter']['consumer_key'],
-                           consumer_secret=creds['twitter']['consumer_secret'])
-auth.set_access_token(creds['twitter']['access_token_key'],
-                      creds['twitter']['access_token_secret'])
+auth = tweepy.OAuthHandler(consumer_key=data['twitter']['consumer_key'],
+                           consumer_secret=data['twitter']['consumer_secret'])
+auth.set_access_token(data['twitter']['access_token_key'],
+                      data['twitter']['access_token_secret'])
 api = tweepy.API(auth)
 
-hashtag = creds['hashtag']
+hashtag = data['hashtag']
 
 exclude_keywords_in_username = ["bot", "alert", "telegram", "tracker"]
 
@@ -97,7 +92,7 @@ def run_tweet_reply():
                             log(status, reply)
                             generated_reply_count += 1
                             # Do not generate more than 5 replies in one hour.
-                            if (generated_reply_count > 5):
+                            if (generated_reply_count > data['no_of_replies_in_one_hour']):
                                 print("Reply limit reached.")
                                 break
                         except Exception:
