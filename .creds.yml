@@ -1,0 +1,8 @@
+- twiter:
+  consumer_key: "sRDEjgJXnnqQ57EEkA73g2sGX"
+  consumer_secret: "3WE6Ouj80YwWiJVQK3lrWNUGXIABARNYTYia5kHWwxCTT2MB2R"
+  access_token_key: "1613040771980234752-uJSBEhQ3PlRyyKcnPJH0Yfhx9dn5Vf"
+  access_token_secret: "w0B0FukhXc4Mu0wXjf36BZAavJ7uEpqZtKidjyLngOtde"
+
+- openai:
+  api_key: "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"
