@@ -8,5 +8,6 @@
   "openai": {
     "api_key": ""
   },
-  "hashtag": "#bitcoin"
+  "hashtag": "#bitcoin",
+  "no_of_replies_in_one_hour": 5
 }
