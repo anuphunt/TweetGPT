@@ -1,2 +1,4 @@
 # TweetGPT
-Gather latest tweets for the specified hashtag, generates tweet replies for those tweets using gpt-3 (technology behind ChatGPT) and replies to the posts in twitter. 
+- Gathers latest tweets for the specified hashtag 
+- Generates tweet replies for those tweets using gpt-3 (technology behind ChatGPT)
+- Replies to the tweets using the generated reply.
